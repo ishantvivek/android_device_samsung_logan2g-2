@@ -158,7 +158,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 
 # External apps on SD
-TARGET_EXTERNAL_APPS = sdcard1
+# TARGET_EXTERNAL_APPS = sdcard1
 
 # Enable dex-preoptimization to speed up the first boot sequence of an SDK AVD.
 # Note that this operation only works on Linux for now.
