@@ -164,8 +164,8 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charg
 # Note that this operation only works on Linux for now.
 WITH_DEXPREOPT := true
 
-BOARD_SEPOLICY_DIRS := \
+# BOARD_SEPOLICY_DIRS := \
         device/samsung/logan2g/sepolicy
 
-BOARD_SEPOLICY_UNION := \
+# BOARD_SEPOLICY_UNION := \
         file_contexts
