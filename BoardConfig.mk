@@ -1,27 +1,5 @@
-# Copyright (C) 2013 The CyanogenMod Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
-#
-# This file sets variables that control the way modules are built
-# thorughout the system. It should not be used to conditionally
-# disable makefiles (the proper mechanism to control what gets
-# included in a build is to use PRODUCT_PACKAGES in a product
-# definition file).
-#
-
 # Assert
-TARGET_OTA_ASSERT_DEVICE := logan2g
+#TARGET_OTA_ASSERT_DEVICE := logan2g
 
 # Architecture
 TARGET_ARCH := arm
@@ -35,8 +13,8 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # GT-S7262 supports neon
 # TARGET_ARCH_VARIANT_FPU := neon
-ARCH_ARM_HAVE_VFP := true
-ARCH_ARM_HAVE_VFP_D32 := false
+#ARCH_ARM_HAVE_VFP := true
+#ARCH_ARM_HAVE_VFP_D32 := false
 # ARCH_ARM_HAVE_NEON := true
 # ARCH_ARM_HAVE_NEON_UNALIGNED_ACCESS := true
 # ARCH_ARM_NEON_MEMSET_DIVIDER := 132
@@ -56,13 +34,12 @@ COMMON_GLOBAL_CFLAGS += -DSPRD_HARDWARE
 TARGET_BOARD_PLATFORM_GPU := mali-400 MP
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8,androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/samsung/logan2g
 TARGET_KERNEL_CONFIG := cyanogenmod-logan2g_defconfig
-TARGET_PROVIDES_INIT_RC := true
-BOARD_KERNEL_IMAGE_NAME := Image
+#TARGET_PROVIDES_INIT_RC := true
 #BOARD_USES_UNCOMPRESSED_BOOT := true
 
 # Partitions
@@ -79,7 +56,7 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_VENDOR_USE_AKMD := true
 
 # Recovery
-TARGET_RECOVERY_INITRC := device/samsung/logan2g/recovery/recovery.rc
+#TARGET_RECOVERY_INITRC := device/samsung/logan2g/recovery/recovery.rc
 TARGET_RECOVERY_FSTAB := device/samsung/logan2g/recovery.fstab
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/samsung/logan2g/recovery/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
@@ -132,16 +109,6 @@ WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/etc/wifi/bcmdhd_sta.bin nv
 WIFI_DRIVER_MODULE_AP_ARG   := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_BAND                   := 802_11_ABG
 
-# Wi-Fi Tethering
-BOARD_HAVE_SAMSUNG_WIFI := true
-BOARD_LEGACY_NL80211_STA_EVENTS := true
-BOARD_NO_APSME_ATTR := true
-
-# Ril
-#BOARD_PROVIDES_LIBRIL := true
-BOARD_FORCE_RILD_AS_ROOT := true
-BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet0"
-BOARD_RIL_CLASS := ../../../device/samsung/logan2g/ril/
 
 # Bootanimation
 TARGET_SCREEN_WIDTH := 480
@@ -164,8 +131,8 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charg
 # Note that this operation only works on Linux for now.
 WITH_DEXPREOPT := true
 
-# BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS := \
         device/samsung/logan2g/sepolicy
 
-# BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_UNION := \
         file_contexts
